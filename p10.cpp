@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define P 5 // number of processes
-#define R 3 // number of resources
+#define P 5 
+#define R 3 
 
 int main() {
     int allocation[P][R] = { {1, 1, 2}, {2, 1, 2}, {3, 0, 1}, {0, 2, 0}, {1, 1, 2} };
@@ -9,14 +9,14 @@ int main() {
     int available[R] = {3, 2, 1};
     int need[P][R];
 
-    // Calculate need matrix
+    
     for(int i = 0; i < P; i++) {
         for(int j = 0; j < R; j++) {
             need[i][j] = max[i][j] - allocation[i][j];
         }
     }
 
-    // Print need matrix
+    
     printf("Need Matrix:\n");
     for(int i = 0; i < P; i++) {
         for(int j = 0; j < R; j++) {
